@@ -154,7 +154,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               );
             }
 
-            final userData = (snapshot.data!.data() as Map<String, dynamic>?) ?? {};
+            final userData = snapshot.data!.data() ?? {};
             String name = userData['name'] ?? 'N/A';
             String prn = userData['prn'] ?? 'N/A';
             String currentYear = userData['year'] ?? '1st Year';
@@ -186,11 +186,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.8),
+                        color: Colors.white.withValues(alpha: 0.8),
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
+                            color: Colors.black.withValues(alpha: 0.05),
                             blurRadius: 10,
                             offset: const Offset(0, 5),
                           )

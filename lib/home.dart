@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(200),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.blue.withOpacity(0.12),
+                          color: Colors.blue.withValues(alpha: 0.12),
                           blurRadius: 40,
                           offset: const Offset(0, 20),
                         ),
@@ -83,10 +83,10 @@ class HomeScreen extends StatelessWidget {
                             colors: [Color(0xFFE0F2FE), Color(0xFFF0F9FF)],
                           ),
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Colors.blue.withOpacity(0.1)),
+                          border: Border.all(color: Colors.blue.withValues(alpha: 0.1)),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.blue.withOpacity(0.05),
+                              color: Colors.blue.withValues(alpha: 0.05),
                               blurRadius: 10,
                               offset: const Offset(0, 4),
                             ),
@@ -97,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                             Container(
                               padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
-                                color: const Color(0xFF60A5FA).withOpacity(0.1),
+                                color: const Color(0xFF60A5FA).withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: const Icon(
@@ -135,7 +135,7 @@ class HomeScreen extends StatelessWidget {
                             Container(
                               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                               decoration: BoxDecoration(
-                                color: Colors.green.withOpacity(0.1),
+                                color: Colors.green.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: const Row(
@@ -201,11 +201,11 @@ class HomeScreen extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.8),
+                              color: Colors.white.withValues(alpha: 0.8),
                               shape: BoxShape.circle,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.05),
+                                  color: Colors.black.withValues(alpha: 0.05),
                                   blurRadius: 10,
                                   offset: const Offset(0, 4),
                                 ),
@@ -230,17 +230,17 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(18),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.72),
+                        color: Colors.white.withValues(alpha: 0.72),
                         borderRadius: BorderRadius.circular(18),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.06),
+                            color: Colors.black.withValues(alpha: 0.06),
                             blurRadius: 24,
                             offset: const Offset(0, 12),
                           ),
                         ],
                         border: Border.all(
-                          color: Colors.white.withOpacity(0.4),
+                          color: Colors.white.withValues(alpha: 0.4),
                         ),
                       ),
                       child: Column(
@@ -289,13 +289,27 @@ class HomeScreen extends StatelessWidget {
 
                   const Spacer(),
 
-                  // small footer / hint
+                  // small footer / attribution
                   Padding(
                     padding: const EdgeInsets.only(bottom: 26.0),
                     child: Center(
-                      child: Text(
-                        'Powered by TokenGen',
-                        style: TextStyle(color: Colors.grey[500], fontSize: 12),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'Developed by Rutuja',
+                            style: TextStyle(
+                              color: const Color(0xFF05264E).withValues(alpha: 0.6),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            'TokenGen Live Demo v1.0',
+                            style: TextStyle(color: Colors.grey[400], fontSize: 11),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -337,12 +351,12 @@ class _PremiumButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(14),
           boxShadow: [
             BoxShadow(
-              color: glowColor.withOpacity(0.22),
+              color: glowColor.withValues(alpha: 0.22),
               blurRadius: 30,
               offset: const Offset(0, 10),
             ),
             BoxShadow(
-              color: Colors.black.withOpacity(0.04),
+              color: Colors.black.withValues(alpha: 0.04),
               blurRadius: 6,
               offset: const Offset(0, 4),
             ),
@@ -355,7 +369,7 @@ class _PremiumButton extends StatelessWidget {
               width: 52,
               height: 52,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.16),
+                color: Colors.white.withValues(alpha: 0.16),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(icon, color: Colors.white, size: 26),
@@ -393,7 +407,7 @@ class _PremiumButton extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.12),
+                color: Colors.white.withValues(alpha: 0.12),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Icon(

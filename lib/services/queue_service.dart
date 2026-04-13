@@ -4,7 +4,7 @@ import 'mock_database.dart';
 
 class QueueService {
   // In-memory data
-  static Map<String, dynamic> _mockSettings = {
+  static final Map<String, dynamic> _mockSettings = {
     'isAcceptingTokens': true,
     'isPaused': false,
     'lastResetAt': DateTime.now(),

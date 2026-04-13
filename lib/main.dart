@@ -67,7 +67,7 @@ class PhonePreview extends StatelessWidget {
                         borderRadius: BorderRadius.circular(44),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.15),
+                            color: Colors.black.withValues(alpha: 0.15),
                             blurRadius: 40,
                             offset: const Offset(0, 20),
                           ),
@@ -220,7 +220,7 @@ class QueueIconPainter extends CustomPainter {
     final double h = size.height;
 
     // subtle platform/queue bar behind the figures
-    final barPaint = Paint()..color = baseColor.withOpacity(0.06);
+    final barPaint = Paint()..color = baseColor.withValues(alpha: 0.06);
     final barRect = RRect.fromRectAndRadius(
       Rect.fromLTWH(w * 0.06, h * 0.62, w * 0.88, h * 0.22),
       const Radius.circular(14),
@@ -243,8 +243,8 @@ class QueueIconPainter extends CustomPainter {
           (i == 1) ? 1.0 : 0.94; // middle slightly bigger
       final Offset c = centers[i];
 
-      final bodyPaint = Paint()..color = baseColor.withOpacity(0.92 - i * 0.18);
-      final headPaint = Paint()..color = baseColor.withOpacity(1.0 - i * 0.08);
+      final bodyPaint = Paint()..color = baseColor.withValues(alpha: 0.92 - i * 0.18);
+      final headPaint = Paint()..color = baseColor.withValues(alpha: 1.0 - i * 0.08);
 
       // body
       final Rect bodyRect = Rect.fromCenter(
@@ -266,7 +266,7 @@ class QueueIconPainter extends CustomPainter {
     // small minimal separator line to suggest queue direction
     final linePaint =
         Paint()
-          ..color = baseColor.withOpacity(0.08)
+          ..color = baseColor.withValues(alpha: 0.08)
           ..strokeWidth = h * 0.012
           ..strokeCap = StrokeCap.round;
     canvas.drawLine(

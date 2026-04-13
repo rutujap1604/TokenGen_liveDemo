@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'services/queue_service.dart';
 import 'services/auth_service.dart';
-import 'services/queue_notification_service.dart';
+
 
 class PulseAnimation extends StatefulWidget {
   final Widget child;
@@ -90,7 +90,7 @@ class _WaitingDotsState extends State<WaitingDots>
               decoration: BoxDecoration(
                 color: const Color(
                   0xFF06B6D4,
-                ).withOpacity(opacity.clamp(0.2, 1.0)),
+                ).withValues(alpha: opacity.clamp(0.2, 1.0)),
                 shape: BoxShape.circle,
               ),
             );
@@ -155,7 +155,7 @@ class QueueDotConnector extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final paint =
         Paint()
-          ..color = Colors.grey.withOpacity(0.3)
+          ..color = Colors.grey.withValues(alpha: 0.3)
           ..strokeWidth = 2
           ..style = PaintingStyle.stroke;
 
@@ -209,7 +209,7 @@ class VisualQueueView extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFF0F172A).withOpacity(0.3),
+                  color: const Color(0xFF0F172A).withValues(alpha: 0.3),
                   blurRadius: 20,
                   offset: const Offset(0, 10),
                 ),
@@ -260,7 +260,7 @@ class VisualQueueView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.orange.withOpacity(0.4),
+                              color: Colors.orange.withValues(alpha: 0.4),
                               blurRadius: 20,
                               offset: const Offset(0, 10),
                             ),
@@ -274,7 +274,7 @@ class VisualQueueView extends StatelessWidget {
                               width: 55,
                               height: 55,
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.25),
+                                color: Colors.white.withValues(alpha: 0.25),
                                 shape: BoxShape.circle,
                               ),
                               child: const Icon(
@@ -387,13 +387,13 @@ class VisualQueueView extends StatelessWidget {
                           border: Border.all(
                             color:
                                 isMe
-                                    ? const Color(0xFF2DD4BF).withOpacity(0.4)
+                                    ? const Color(0xFF2DD4BF).withValues(alpha: 0.4)
                                     : Colors.grey.shade200,
                             width: 1.5,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.03),
+                              color: Colors.black.withValues(alpha: 0.03),
                               blurRadius: 10,
                               offset: const Offset(0, 4),
                             ),
@@ -723,7 +723,7 @@ class _ViewQueueScreenState extends State<ViewQueueScreen>
                   color: (isMyTurnServing
                           ? Colors.orange
                           : const Color(0xFF2DD4BF))
-                      .withOpacity(0.3),
+                      .withValues(alpha: 0.3),
                   blurRadius: 12,
                   offset: const Offset(0, 6),
                 ),
@@ -759,7 +759,7 @@ class _ViewQueueScreenState extends State<ViewQueueScreen>
                     vertical: 4,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
@@ -951,7 +951,7 @@ class _ViewQueueScreenState extends State<ViewQueueScreen>
                             borderRadius: BorderRadius.circular(12),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.04),
+                                color: Colors.black.withValues(alpha: 0.04),
                                 blurRadius: 10,
                                 offset: const Offset(0, 6),
                               ),

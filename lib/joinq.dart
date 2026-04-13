@@ -257,7 +257,7 @@ class _JoinQueueScreenState extends State<JoinQueueScreen> {
                           borderRadius: BorderRadius.circular(14),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.green.withOpacity(0.3),
+                              color: Colors.green.withValues(alpha: 0.3),
                               blurRadius: 12,
                               offset: const Offset(0, 6),
                             ),
@@ -356,8 +356,9 @@ class _JoinQueueScreenState extends State<JoinQueueScreen> {
                             GestureDetector(
                               onTap: () async {
                                 await _queueService.leaveWaitlist(user.uid);
-                                if (mounted)
+                                if (mounted) {
                                   setState(() => _onWaitlist = false);
+                                }
                               },
                               child: const Icon(
                                 Icons.close,
@@ -391,7 +392,7 @@ class _JoinQueueScreenState extends State<JoinQueueScreen> {
                       borderRadius: BorderRadius.circular(18),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.teal.withOpacity(0.18),
+                          color: Colors.teal.withValues(alpha: 0.18),
                           blurRadius: 30,
                           offset: const Offset(0, 14),
                         ),
@@ -420,7 +421,7 @@ class _JoinQueueScreenState extends State<JoinQueueScreen> {
                           Icon(
                             Icons.confirmation_num_outlined,
                             size: 56,
-                            color: Colors.white.withOpacity(0.9),
+                            color: Colors.white.withValues(alpha: 0.9),
                           ),
                         ] else ...[
                           const Text(
@@ -489,7 +490,7 @@ class _JoinQueueScreenState extends State<JoinQueueScreen> {
                             color:
                                 _token == null
                                     ? const Color(0x3322A7FF)
-                                    : Colors.green.withOpacity(0.22),
+                                    : Colors.green.withValues(alpha: 0.22),
                             blurRadius: 18,
                             offset: const Offset(0, 8),
                           ),
